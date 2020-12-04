@@ -16,7 +16,7 @@ import ru.geekbrains.persist.CustomerRepository;
 @RequestMapping("/customer")
 public class CustomerController {
 
-  private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+  private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
   @Autowired
   private CustomerRepository customerRepository;
