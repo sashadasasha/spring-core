@@ -1,3 +1,5 @@
+package ru.geekbrains;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,9 +11,7 @@ public class Customer {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String firstName;
-
-  private String lastName;
+  private String name;
 
   @ManyToMany
   @JoinTable(
@@ -24,10 +24,13 @@ public class Customer {
   public Customer() {
   }
 
-  public Customer(Long id, String firstName, String lastName) {
+  public Customer(String name) {
+    this.name = name;
+  }
+
+  public Customer(Long id, String name) {
     this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.name = name;
   }
 
   public Long getId() {
@@ -38,19 +41,20 @@ public class Customer {
     this.id = id;
   }
 
-  public String getFirstName() {
-    return firstName;
+  public String getName() {
+    return name;
   }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public String getLastName() {
-    return lastName;
+  public List<Product> getProducts() {
+    return products;
   }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
+  public void setProducts(List<Product> products) {
+    this.products = products;
   }
 }
+

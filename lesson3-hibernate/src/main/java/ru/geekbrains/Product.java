@@ -1,3 +1,7 @@
+package ru.geekbrains;
+
+import ru.geekbrains.Customer;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
@@ -65,5 +69,13 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 }
